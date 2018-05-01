@@ -1,0 +1,5 @@
+# CSS Style linting
+#
+# https://github.com/stylelint/stylelint
+# https://github.com/kristerkari/stylelint-config-recommended-scss
+extends: stylelint-config-recommended-scss

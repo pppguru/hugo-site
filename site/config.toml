@@ -1,0 +1,79 @@
+baseurl = "/"
+languageCode = "en-us"
+languageLang = "en"
+
+# RSS, categories and tags disabled for an easy start
+# See configuration options for more details: 
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+#Multi-language options
+defaultContentLanguage = "en"
+
+[params]
+    logo = "img/diffeo-logo-white.png"
+    author = "DevCows"
+    defaultKeywords = ["diffeo", "hugo", "go"]
+    defaultDescription = "Diffeo site built in hugo"
+
+    email = "contact@diffeo.com"
+
+    copyright = "Copyright (c) 2018 @ Diffeo."
+
+    # Format dates with Go's time formatting
+    date_format = "January 2, 2006"
+
+    
+
+[languages]
+    [languages.en]
+        title = "Diffeo Website 2"
+        languageName = "English"
+        weight = 1
+        
+        #Nav Top Menus
+        [[languages.en.menu.main]]
+            name = "Enterprise"
+            url  = "/enterprise/"
+            weight = 1
+
+        [[languages.en.menu.main]]
+            name = "Solutions"
+            url  = "/solutions/"
+            weight = 2
+
+        [[languages.en.menu.main]]
+            name = "About"
+            url  = "/about/"
+            weight = 3
+
+        [[languages.en.menu.main]]
+            name = "Labs"
+            url  = "/labs/"
+            weight = 4
+
+    [languages.es]
+        title = "Diffeo Sitio Web 2"
+        languageName = "Spanish"
+        weight = 2
+        
+        #Nav Top Menus
+        [[languages.es.menu.main]]
+            name = "Empresa"
+            url  = "/es/enterprise/"
+            weight = 1
+
+        [[languages.es.menu.main]]
+            name = "Soluciones"
+            url  = "/es/solutions/"
+            weight = 2
+
+        [[languages.es.menu.main]]
+            name = "Acerca de"
+            url  = "/es/about/"
+            weight = 3
+
+        [[languages.es.menu.main]]
+            name = "Labs"
+            url  = "/es/labs/"
+            weight = 4

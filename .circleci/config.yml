@@ -1,0 +1,64 @@
+version: 2
+
+# Default blocks for re-use between jobs.
+
+defaults: &defaults
+  working_directory: ~/site
+  docker:
+    - image: diffeo/ci-builder:0.1.2-2018040818
+print_versions: &print_versions
+  run:
+    name: Print versions
+    command: |
+      set -v
+      node --version
+      npm --version
+      yarn --version
+yarn_restore_cache: &yarn_restore_cache
+  restore_cache:
+    keys:
+      - yarn-v1-{{ checksum "yarn.lock" }}
+yarn_install: &yarn_install
+  run:
+    name: Install dependencies
+    command: yarn install
+yarn_save_cache: &yarn_save_cache
+  save_cache:
+    key: yarn-v1-{{ checksum "yarn.lock" }}
+    paths:
+      # TODO: Change the explicit home reference to ~ when this is resolved:
+      # https://discuss.circleci.com/t/unable-to-reliably-cache-files-in-home-directory/20054
+      - /home/diffeo/.cache/yarn
+
+# Job definitions
+
+jobs:
+  build:
+    <<: *defaults
+    resource_class: large
+    steps:
+      - checkout
+      - *print_versions
+      - *yarn_restore_cache
+      - *yarn_install
+      - *yarn_save_cache
+      - run:
+          name: Run format checker
+          command: yarn run fmt:check
+      - run:
+          name: Run linter
+          command: yarn run lint
+      - run:
+          name: Build site
+          command: yarn run build
+
+# Workflow definitions
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^[0-9]+[.][0-9]+[.][0-9]+.*/

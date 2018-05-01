@@ -1,0 +1,84 @@
+env:
+  browser: true
+
+parser: babel-eslint
+
+# Disable ESLint formatting rules in favor of prettier:
+# https://prettier.io/docs/en/eslint.html#turn-off-eslint-s-formatting-rules
+extends: [ "prettier" ]
+
+plugins: [ "import" ]
+
+# enable ECMAScript features
+ecmaFeatures:
+  arrowFunctions: true
+  binaryLiterals: true
+  blockBindings: true
+  classes: true
+  defaultParams: true
+  destructuring: true
+  forOf: true
+  generators: true
+  jsx: true
+  modules: true
+  objectLiteralShorthandMethods: true
+  objectLiteralShorthandProperties: true
+  octalLiterals: true
+  spread: true
+  templateStrings: true
+
+rules:
+  # Possible Errors
+  # https://github.com/eslint/eslint/tree/master/docs/rules#possible-errors
+  no-control-regex: 2
+  no-console: 1
+  no-debugger: 2
+  no-dupe-args: 2
+  no-dupe-keys: 2
+  no-duplicate-case: 2
+  no-empty-character-class: 2
+  no-ex-assign: 2
+  no-extra-boolean-cast : 2
+  no-extra-semi: 2
+  no-invalid-regexp: 2
+  no-irregular-whitespace: 1
+  no-proto: 2
+  no-unexpected-multiline: 2
+  no-unreachable: 2
+  valid-typeof: 2
+
+  # Best Practices
+  # https://github.com/eslint/eslint/tree/master/docs/rules#best-practices
+  no-fallthrough: 2
+  no-redeclare: 2
+
+  # ECMAScript 6
+  # http://eslint.org/docs/rules/#ecmascript-6
+  arrow-parens: [2, "always"]
+  arrow-spacing: [2, {"before": true, "after": true}]
+  no-confusing-arrow: 2
+  prefer-const: 2
+
+  # JSX
+  jsx-quotes: [2, "prefer-double"]
+
+  # Import
+  import/no-unresolved: [1, {"commonjs": true, "amd": true}]
+  import/export: 2
+
+  # Strict Mode
+  # https://github.com/eslint/eslint/tree/master/docs/rules#strict-mode
+  strict: [2, "global"]
+
+  # Variables
+  # https://github.com/eslint/eslint/tree/master/docs/rules#variables
+  no-undef: 2
+  no-unused-vars: [2, {"args": "none"}]
+
+# Global scoped method and vars
+globals:
+  __dirname: true
+  require: true
+  process: true
+  ENV: true
+  module: true

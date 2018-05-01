@@ -1,0 +1,116 @@
+#footer {
+  background: $colorMediumGray;
+  padding: 50px 0;
+  color: $colorLightGray;
+  h1 {
+    color: $colorDarkWhite;
+  }
+  h2 {
+    color: $colorDarkWhite;
+  }
+  h3 {
+    color: $colorDarkWhite;
+  }
+  h4 {
+    color: $colorDarkWhite;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  h5 {
+    color: $colorDarkWhite;
+  }
+  h6 {
+    color: $colorDarkWhite;
+  }
+  ul {
+    padding-left: 0;
+    list-style: none;
+    a {
+      color: $colorLightGray;
+      &:hover {
+        color: $colorBrightBlue;
+        text-decoration: none;
+      }
+    }
+  }
+  .photostream div {
+    float: left;
+    display: block;
+    box-sizing: border-box;
+    width: 33%;
+    padding: 7.5px;
+    overflow: hidden;
+    a {
+      border: solid 1 px $colorDarkWhite;
+    }
+    img {
+      transition: all 0.2s ease-out;
+    }
+    &:hover img {
+      transform: scale(1.1, 1.1);
+    }
+  }
+  .blog-entries .item {
+    clear: both;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-bottom: solid 1px $colorMediumGray;
+    .image {
+      float: left;
+      width: 15%;
+      margin-right: 10px;
+    }
+    .name {
+      width: 75%;
+      margin-left: 10px;
+      display: table-cell;
+      vertical-align: middle;
+      h5 {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 12px;
+        a {
+          color: $colorDarkWhite;
+        }
+      }
+    }
+    .text {
+      width: 100%;
+      clear: both;
+    }
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+  .social a {
+    color: $colorMediumGray;
+    font-size: 25px;
+    margin: 0 10px 0 0;
+    &:hover {
+      color: $colorBrightBlue;
+    }
+  }
+}
+
+#copyright {
+  background: $colorHeavyDark;
+  color: $colorBoxShadow;
+  padding: 50px 0;
+  font-size: 12px;
+  line-height: 28px;
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  #copyright p {
+    float: none !important;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}

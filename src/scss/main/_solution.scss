@@ -1,0 +1,24 @@
+#content {
+  #solution-post {
+    #post-content {
+      p {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .solution-sidebar {
+    margin-top: 50px;
+
+    a {
+      .desktop-sales {
+        display: inline;
+        width: 100%;
+        margin-top: 10px;
+        background: #0da1ff;
+      }
+    }
+  }
+}

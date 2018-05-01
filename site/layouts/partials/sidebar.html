@@ -1,0 +1,9 @@
+{{ with .Site.GetPage "page" "sidebar.md"}}
+    <div class="solution-sidebar">
+        {{ .Content }}
+
+        <a style="color:white;text-decoration:none;" href="mailto:sales@diffeo.com">
+            <button class="cta desktop-sales">Contact Sales</button>
+        </a>
+    </div>
+{{ end }}
